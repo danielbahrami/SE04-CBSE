@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.main;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -12,16 +13,19 @@ import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 import dk.sdu.mmmi.cbse.common.util.SPILocator;
 import dk.sdu.mmmi.cbse.managers.GameInputProcessor;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 public class Game implements ApplicationListener {
     private static OrthographicCamera cam;
-    private ShapeRenderer sr;
     private final GameData gameData = new GameData();
+    private ShapeRenderer sr;
     private List<IEntityProcessingService> entityProcessors = new ArrayList<>();
     private List<IPostEntityProcessingService> postEntityProcessors = new ArrayList<>();
     private World world = new World();
+
     @Override
     public void create() {
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
@@ -35,6 +39,7 @@ public class Game implements ApplicationListener {
             iGamePlugin.start(gameData, world);
         }
     }
+
     @Override
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -44,14 +49,16 @@ public class Game implements ApplicationListener {
         draw();
         gameData.getKeys().update();
     }
+
     private void update() {
         for (IEntityProcessingService entityProcessorService : getEntityProcessingServices()) {
             entityProcessorService.process(gameData, world);
         }
-         for (IPostEntityProcessingService postEntityProcessorService : getPostEntityProcessingServices()) {
+        for (IPostEntityProcessingService postEntityProcessorService : getPostEntityProcessingServices()) {
             postEntityProcessorService.process(gameData, world);
         }
     }
+
     private void draw() {
         for (Entity entity : world.getEntities()) {
             sr.setColor(1, 1, 1, 1);
@@ -59,31 +66,38 @@ public class Game implements ApplicationListener {
             float[] shapex = entity.getShapeX();
             float[] shapey = entity.getShapeY();
             for (int i = 0, j = shapex.length - 1;
-                    i < shapex.length;
-                    j = i++) {
+                 i < shapex.length;
+                 j = i++) {
                 sr.line(shapex[i], shapey[i], shapex[j], shapey[j]);
             }
             sr.end();
         }
     }
+
     @Override
     public void resize(int width, int height) {
     }
+
     @Override
     public void pause() {
     }
+
     @Override
     public void resume() {
     }
+
     @Override
     public void dispose() {
     }
+
     private Collection<? extends IGamePluginService> getPluginServices() {
         return SPILocator.locateAll(IGamePluginService.class);
     }
+
     private Collection<? extends IEntityProcessingService> getEntityProcessingServices() {
         return SPILocator.locateAll(IEntityProcessingService.class);
     }
+
     private Collection<? extends IPostEntityProcessingService> getPostEntityProcessingServices() {
         return SPILocator.locateAll(IPostEntityProcessingService.class);
     }

@@ -1,10 +1,12 @@
 package dk.sdu.mmmi.cbse.collision;
+
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
+import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
+
 public class Collision implements IPostEntityProcessingService {
     @Override
     public void process(GameData gameData, World world) {
@@ -32,6 +34,7 @@ public class Collision implements IPostEntityProcessingService {
             }
         }
     }
+
     public Boolean Collides(Entity entity, Entity entity2) {
         PositionPart entMov = entity.getPart(PositionPart.class);
         PositionPart entMov2 = entity2.getPart(PositionPart.class);
