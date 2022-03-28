@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.playersystem;
+
 import dk.sdu.mmmi.cbse.common.bullet.BulletSPI;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -11,8 +12,9 @@ import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 import org.openide.util.Lookup;
 import org.openide.util.lookup.ServiceProvider;
 import org.openide.util.lookup.ServiceProviders;
+
 @ServiceProviders(value = {
-    @ServiceProvider(service = IEntityProcessingService.class),})
+        @ServiceProvider(service = IEntityProcessingService.class),})
 public class PlayerControlSystem implements IEntityProcessingService {
     @Override
     public void process(GameData gameData, World world) {
@@ -33,6 +35,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
             updateShape(player);
         }
     }
+
     private void updateShape(Entity entity) {
         float[] shapex = new float[4];
         float[] shapey = new float[4];

@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.enemysystem;
+
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
@@ -6,11 +7,14 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import java.util.Random;
 import org.openide.util.lookup.ServiceProvider;
+
+import java.util.Random;
+
 @ServiceProvider(service = IEntityProcessingService.class)
 public class EnemyControlSystem implements IEntityProcessingService {
     private Entity enemy;
+
     @Override
     public void process(GameData gameData, World world) {
         for (Entity enemy : world.getEntities(Enemy.class)) {
@@ -37,6 +41,7 @@ public class EnemyControlSystem implements IEntityProcessingService {
             movingPart.setUp(false);
         }
     }
+
     private void updateShape(Entity entity) {
         float[] shapex = new float[4];
         float[] shapey = new float[4];

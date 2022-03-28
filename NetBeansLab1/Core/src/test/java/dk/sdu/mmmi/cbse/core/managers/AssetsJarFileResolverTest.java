@@ -1,31 +1,39 @@
 package dk.sdu.mmmi.cbse.core.managers;
+
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import java.io.File;
-import java.net.MalformedURLException;
-import static junit.framework.TestCase.assertNotNull;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
+
+import java.io.File;
+import java.net.MalformedURLException;
+
+import static junit.framework.TestCase.assertNotNull;
+import static org.mockito.Mockito.mock;
+
 public class AssetsJarFileResolverTest {
     public AssetsJarFileResolverTest() {
     }
+
     @BeforeClass
     public static void setUpClass() {
         Gdx.app = mock(Application.class);
         Gdx.gl = mock(GL20.class);
         GdxNativesLoader.load();
     }
+
     @AfterClass
     public static void tearDownClass() {
     }
+
     /**
      * Test of resolve method, of class AssetsJarFileResolver.
+     *
      * @throws java.net.MalformedURLException
      */
     @Test
