@@ -1,13 +1,17 @@
 package dk.sdu.mmmi.cbse.core.managers;
+
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.GameKeys;
+
 public class GameInputProcessor extends InputAdapter {
     private final GameData gameData;
+
     public GameInputProcessor(GameData gameData) {
         this.gameData = gameData;
     }
+
     public boolean keyDown(int k) {
         if (k == Keys.UP) {
             gameData.getKeys().setKey(GameKeys.UP, true);
@@ -35,6 +39,7 @@ public class GameInputProcessor extends InputAdapter {
         }
         return true;
     }
+
     public boolean keyUp(int k) {
         if (k == Keys.UP) {
             gameData.getKeys().setKey(GameKeys.UP, false);

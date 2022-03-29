@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.bulletsystem;
+
 import dk.sdu.mmmi.cbse.common.bullet.BulletSPI;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -8,13 +9,15 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.TimerPart;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
 import org.openide.util.lookup.ServiceProvider;
 import org.openide.util.lookup.ServiceProviders;
+
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+
 @ServiceProviders(value = {
-    @ServiceProvider(service = IEntityProcessingService.class),
-    @ServiceProvider(service = BulletSPI.class)})
+        @ServiceProvider(service = IEntityProcessingService.class),
+        @ServiceProvider(service = BulletSPI.class)})
 public class BulletControlSystem implements IEntityProcessingService, BulletSPI {
     @Override
     public void process(GameData gameData, World world) {
@@ -32,6 +35,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
             setShape(bullet);
         }
     }
+
     @Override
     public Entity createBullet(Entity shooter, GameData gameData) {
         PositionPart shooterPos = shooter.getPart(PositionPart.class);
@@ -53,6 +57,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         bullet.setShapeY(new float[2]);
         return bullet;
     }
+
     private void setShape(Entity entity) {
         float[] shapex = entity.getShapeX();
         float[] shapey = entity.getShapeY();

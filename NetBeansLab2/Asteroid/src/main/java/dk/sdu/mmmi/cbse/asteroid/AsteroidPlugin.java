@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.asteroid;
+
 import dk.sdu.mmmi.cbse.common.asteroids.Asteroid;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -8,6 +9,7 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 import org.openide.util.lookup.ServiceProvider;
+
 @ServiceProvider(service = IGamePluginService.class)
 public class AsteroidPlugin implements IGamePluginService {
     @Override
@@ -15,12 +17,14 @@ public class AsteroidPlugin implements IGamePluginService {
         Entity asteroid = createAsteroid(gameData);
         world.addEntity(asteroid);
     }
+
     @Override
     public void stop(GameData gameData, World world) {
         for (Entity asteroid : world.getEntities(Asteroid.class)) {
             world.removeEntity(asteroid);
         }
     }
+
     private Entity createAsteroid(GameData gameData) {
         Entity asteroid = new Asteroid();
         float radians = (float) Math.random() * 2 * 3.1415f;

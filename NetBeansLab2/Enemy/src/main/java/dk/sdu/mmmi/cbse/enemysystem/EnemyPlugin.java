@@ -1,4 +1,5 @@
 package dk.sdu.mmmi.cbse.enemysystem;
+
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
@@ -7,18 +8,22 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.enemy.Enemy;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
-import java.util.Random;
 import org.openide.util.lookup.ServiceProvider;
 import org.openide.util.lookup.ServiceProviders;
+
+import java.util.Random;
+
 @ServiceProviders(value = {
-    @ServiceProvider(service = IGamePluginService.class),})
+        @ServiceProvider(service = IGamePluginService.class),})
 public class EnemyPlugin implements IGamePluginService {
     private Entity enemy;
+
     @Override
     public void start(GameData gameData, World world) {
         enemy = createEnemyShip(gameData);
         world.addEntity(enemy);
     }
+
     private Entity createEnemyShip(GameData gameData) {
         float deacceleration = 10;
         float acceleration = 150;
@@ -39,6 +44,7 @@ public class EnemyPlugin implements IGamePluginService {
         enemyShip.add(new LifePart(1));
         return enemyShip;
     }
+
     @Override
     public void stop(GameData gameData, World world) {
         world.removeEntity(enemy);

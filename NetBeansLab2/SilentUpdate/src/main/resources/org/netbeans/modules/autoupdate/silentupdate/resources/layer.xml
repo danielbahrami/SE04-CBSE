@@ -4,11 +4,14 @@
     <folder name="Services">
         <folder name="AutoupdateType">
             <file name="org_netbeans_modules_autoupdate_silentupdate_update_center.instance">
-                <attr name="displayName" bundlevalue="org.netbeans.modules.autoupdate.silentupdate.resources.Bundle#Services/AutoupdateType/org_netbeans_modules_autoupdate_silentupdate_update_center.instance"/>
+                <attr name="displayName"
+                      bundlevalue="org.netbeans.modules.autoupdate.silentupdate.resources.Bundle#Services/AutoupdateType/org_netbeans_modules_autoupdate_silentupdate_update_center.instance"/>
                 <attr name="enabled" boolvalue="true"/>
-                <attr name="instanceCreate" methodvalue="org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogFactory.createUpdateProvider"/>
+                <attr name="instanceCreate"
+                      methodvalue="org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogFactory.createUpdateProvider"/>
                 <attr name="instanceOf" stringvalue="org.netbeans.spi.autoupdate.UpdateProvider"/>
-                <attr name="url" bundlevalue="org.netbeans.modules.autoupdate.silentupdate.resources.Bundle#org_netbeans_modules_autoupdate_silentupdate_update_center"/>
+                <attr name="url"
+                      bundlevalue="org.netbeans.modules.autoupdate.silentupdate.resources.Bundle#org_netbeans_modules_autoupdate_silentupdate_update_center"/>
             </file>
         </folder>
     </folder>
