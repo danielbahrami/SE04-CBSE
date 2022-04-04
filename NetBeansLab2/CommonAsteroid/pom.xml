@@ -7,7 +7,7 @@
         <artifactId>NetBeansLab2</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>CommonAsteroids</artifactId>
+    <artifactId>CommonAsteroid</artifactId>
     <packaging>nbm</packaging>
     <build>
         <plugins>

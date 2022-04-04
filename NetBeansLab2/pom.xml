@@ -51,7 +51,7 @@
         <module>SilentUpdate</module>
         <module>Asteroid</module>
         <module>Common</module>
-        <module>CommonAsteroids</module>
+        <module>CommonAsteroid</module>
         <module>CommonEnemy</module>
         <module>Player</module>
         <module>Bullet</module>
