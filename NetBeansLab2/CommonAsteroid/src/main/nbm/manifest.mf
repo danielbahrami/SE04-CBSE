@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/cbse/common/asteroids/Bundle.properties
+OpenIDE-Module-Localizing-Bundle: dk/sdu/mmmi/cbse/common/asteroid/Bundle.properties
