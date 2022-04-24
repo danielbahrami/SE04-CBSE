@@ -1,16 +1,16 @@
 package dk.sdu.mmmi.cbse.common.data;
 
 import dk.sdu.mmmi.cbse.common.events.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GameData {
-
+    private final GameKeys keys = new GameKeys();
     private float delta;
     private int displayWidth;
     private int displayHeight;
-    private final GameKeys keys = new GameKeys();
     private List<Event> events = new CopyOnWriteArrayList<>();
 
     public void addEvent(Event e) {
@@ -29,28 +29,28 @@ public class GameData {
         return keys;
     }
 
-    public void setDelta(float delta) {
-        this.delta = delta;
-    }
-
     public float getDelta() {
         return delta;
     }
 
-    public void setDisplayWidth(int width) {
-        this.displayWidth = width;
+    public void setDelta(float delta) {
+        this.delta = delta;
     }
 
     public int getDisplayWidth() {
         return displayWidth;
     }
 
-    public void setDisplayHeight(int height) {
-        this.displayHeight = height;
+    public void setDisplayWidth(int width) {
+        this.displayWidth = width;
     }
 
     public int getDisplayHeight() {
         return displayHeight;
+    }
+
+    public void setDisplayHeight(int height) {
+        this.displayHeight = height;
     }
 
     public <E extends Event> List<Event> getEvents(Class<E> type, String sourceID) {
@@ -60,7 +60,6 @@ public class GameData {
                 r.add(event);
             }
         }
-
         return r;
     }
 }
