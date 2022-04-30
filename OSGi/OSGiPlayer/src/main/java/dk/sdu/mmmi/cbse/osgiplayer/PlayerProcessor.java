@@ -11,7 +11,7 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.player.Player;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 
-public class PlayerControlSystem implements IEntityProcessingService {
+public class PlayerProcessor implements IEntityProcessingService {
     private BulletSPI bulletService;
 
     @Override
