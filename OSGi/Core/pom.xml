@@ -4,7 +4,7 @@
     <parent>
         <relativePath>../poms/compiled/</relativePath>
         <groupId>dk.sdu.mmmi.build</groupId>
-        <artifactId>compiled-bundle-settings</artifactId>
+        <artifactId>compiled</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <properties>
@@ -12,10 +12,10 @@
         <bundle.namespace>dk.sdu.mmmi</bundle.namespace>
     </properties>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>OSGiCore</artifactId>
+    <artifactId>Core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>OSGiCore</name>
+    <name>Core</name>
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -29,12 +29,12 @@
         </dependency>
         <dependency>
             <groupId>dk.sdu.mmmi.build</groupId>
-            <artifactId>OSGiCommon</artifactId>
+            <artifactId>Common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiLibGDX</artifactId>
+            <artifactId>LibGDX</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

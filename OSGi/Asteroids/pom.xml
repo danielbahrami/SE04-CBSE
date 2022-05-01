@@ -5,17 +5,17 @@
     <parent>
         <relativePath>../poms/compiled/</relativePath>
         <groupId>dk.sdu.mmmi.build</groupId>
-        <artifactId>compiled-bundle-settings</artifactId>
+        <artifactId>compiled</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <properties>
         <bundle.symbolicName>dk.sdu.mmmi.common</bundle.symbolicName>
         <bundle.namespace>dk.sdu.mmmi</bundle.namespace>
     </properties>
-    <artifactId>OSGiAsteroids</artifactId>
+    <artifactId>Asteroids</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>OSGiAsteroids</name>
+    <name>Asteroids</name>
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiCommonAsteroids</artifactId>
+            <artifactId>CommonAsteroids</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
