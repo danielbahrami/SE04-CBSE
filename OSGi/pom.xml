@@ -18,18 +18,18 @@
     <modules>
         <module>poms</module>
         <module>provision</module>
-        <module>OSGiCore</module>
-        <module>OSGiCommon</module>
-        <module>OSGiCommonAsteroids</module>
-        <module>OSGiCommonBullet</module>
-        <module>OSGiCommonEnemy</module>
-        <module>OSGiCommonPlayer</module>
-        <module>OSGiAsteroidSplitter</module>
-        <module>OSGiAsteroids</module>
-        <module>OSGiLaser</module>
-        <module>OSGiEnemy</module>
-        <module>OSGiPlayer</module>
-        <module>OSGiLibGDX</module>
+        <module>Core</module>
+        <module>Common</module>
+        <module>CommonAsteroids</module>
+        <module>CommonBullet</module>
+        <module>CommonEnemy</module>
+        <module>CommonPlayer</module>
+        <module>AsteroidSplitter</module>
+        <module>Asteroids</module>
+        <module>Laser</module>
+        <module>Enemy</module>
+        <module>Player</module>
+        <module>LibGDX</module>
     </modules>
     <build>
         <plugins>
