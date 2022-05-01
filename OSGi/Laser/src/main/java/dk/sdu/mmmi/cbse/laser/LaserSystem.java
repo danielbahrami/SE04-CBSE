@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.laserweapon;
+package dk.sdu.mmmi.cbse.laser;
 
 import dk.sdu.mmmi.cbse.common.bullet.Bullet;
 import dk.sdu.mmmi.cbse.common.bullet.BulletSPI;

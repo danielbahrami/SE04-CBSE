@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.osgiplayer;
+package dk.sdu.mmmi.cbse.player;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;

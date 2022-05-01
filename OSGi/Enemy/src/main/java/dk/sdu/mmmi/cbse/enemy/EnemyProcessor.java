@@ -1,35 +1,33 @@
-package dk.sdu.mmmi.cbse.osgiplayer;
+package dk.sdu.mmmi.cbse.enemy;
 
 import dk.sdu.mmmi.cbse.common.bullet.BulletSPI;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
-import dk.sdu.mmmi.cbse.common.data.GameKeys;
 import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
-import dk.sdu.mmmi.cbse.common.player.Player;
+import dk.sdu.mmmi.cbse.common.enemy.Enemy;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 
-public class PlayerProcessor implements IEntityProcessingService {
+public class EnemyProcessor implements IEntityProcessingService {
     private BulletSPI bulletService;
 
     @Override
     public void process(GameData gameData, World world) {
-        for (Entity player : world.getEntities(Player.class)) {
-            PositionPart positionPart = player.getPart(PositionPart.class);
-            MovingPart movingPart = player.getPart(MovingPart.class);
-            LifePart lifePart = player.getPart(LifePart.class);
-            movingPart.setLeft(gameData.getKeys().isDown(GameKeys.LEFT));
-            movingPart.setRight(gameData.getKeys().isDown(GameKeys.RIGHT));
-            movingPart.setUp(gameData.getKeys().isDown(GameKeys.UP));
-            if (gameData.getKeys().isDown(GameKeys.SPACE)) {
-                Entity bullet = bulletService.createBullet(player, gameData);
+        for (Entity entity : world.getEntities(Enemy.class)) {
+            PositionPart positionPart = entity.getPart(PositionPart.class);
+            MovingPart movingPart = entity.getPart(MovingPart.class);
+            double random = Math.random();
+            movingPart.setLeft(random < 0.2);
+            movingPart.setRight(random > 0.3 && random < 0.5);
+            movingPart.setUp(random > 0.7 && random < 0.9);
+            if (random > 0.98 && bulletService != null) {
+                Entity bullet = bulletService.createBullet(entity, gameData);
                 world.addEntity(bullet);
             }
-            movingPart.process(gameData, player);
-            positionPart.process(gameData, player);
-            updateShape(player);
+            movingPart.process(gameData, entity);
+            positionPart.process(gameData, entity);
+            updateShape(entity);
         }
     }
 
