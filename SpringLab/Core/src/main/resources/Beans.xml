@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="player" class="dk.sdu.mmmi.cbse.player.Player"/>
+    <bean id="playerPlugin" class="dk.sdu.mmmi.cbse.player.PlayerPlugin"/>
+    <bean id="playerControlSystem" class="dk.sdu.mmmi.cbse.player.PlayerControlSystem"/>
+    <bean id="enemy" class="dk.sdu.mmmi.cbse.enemy.Enemy"/>
+    <bean id="enemyPlugin" class="dk.sdu.mmmi.cbse.enemy.EnemyPlugin"/>
+    <bean id="enemyControlSystem" class="dk.sdu.mmmi.cbse.enemy.EnemyControlSystem"/>
+</beans>
