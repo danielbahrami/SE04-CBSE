@@ -11,4 +11,5 @@
     <bean id="enemy" class="dk.sdu.mmmi.cbse.enemy.Enemy"/>
     <bean id="enemyControlSystem" class="dk.sdu.mmmi.cbse.enemy.EnemyControlSystem"/>
     <bean id="enemyPlugin" class="dk.sdu.mmmi.cbse.enemy.EnemyPlugin"/>
+    <bean id="collision" class="dk.sdu.mmmi.cbse.collision.Collision"/>
 </beans>
