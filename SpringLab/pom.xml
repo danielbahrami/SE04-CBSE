@@ -12,6 +12,7 @@
         <module>Asteroid</module>
         <module>Player</module>
         <module>Enemy</module>
+        <module>Collision</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
