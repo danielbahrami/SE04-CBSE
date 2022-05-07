@@ -31,11 +31,6 @@ public class AssetsJarFileResolverTest {
     public static void tearDownClass() {
     }
 
-    /**
-     * Test of resolve method, of class AssetsJarFileResolver.
-     *
-     * @throws java.net.MalformedURLException
-     */
     @Test
     public void testJarAssetManager() throws MalformedURLException {
         System.out.println("testJarAssetManager");
