@@ -29,6 +29,7 @@
         <module>Laser</module>
         <module>Enemy</module>
         <module>Player</module>
+        <module>Collision</module>
         <module>LibGDX</module>
     </modules>
     <build>
