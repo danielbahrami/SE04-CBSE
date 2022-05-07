@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.bullet;
+package dk.sdu.mmmi.cbse.common.bullet;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
 
