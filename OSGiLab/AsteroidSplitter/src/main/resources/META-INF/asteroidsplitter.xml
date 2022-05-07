@@ -2,6 +2,6 @@
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="dk.sdu.mmmi.cbse.osgiasteroidsplitter">
     <implementation class="dk.sdu.mmmi.cbse.asteroidsplitter.AsteroidSplitterImpl"/>
     <service>
-        <provide interface="dk.sdu.mmmi.cbse.common.asteroids.IAsteroidSplitter"/>
+        <provide interface="dk.sdu.mmmi.cbse.common.asteroid.IAsteroidSplitter"/>
     </service>
 </scr:component>
