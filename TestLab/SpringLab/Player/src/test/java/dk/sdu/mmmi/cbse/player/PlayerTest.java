@@ -36,8 +36,8 @@ public class PlayerTest {
 
         for (Entity entity : world.getEntities(Player.class)) {
             PositionPart positionPart = entity.getPart(PositionPart.class);
-            positionPart.setX(100.0f);
-            positionPart.setY(100.0f);
+            positionPart.setX((gameData.getDisplayWidth() / 2.f) + 100.f);
+            positionPart.setY((gameData.getDisplayHeight() / 2.f) + 100.f);
             newX = positionPart.getX();
             newY = positionPart.getY();
         }
