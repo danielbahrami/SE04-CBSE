@@ -1,13 +1,12 @@
 package dk.sdu.mmmi.cbse.player;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNotEquals;
 
 public class PlayerTest {
 
@@ -49,7 +48,5 @@ public class PlayerTest {
         assertNotEquals(spawnY, newY, delta);
 
         System.out.println("Movement test completed");
-
     }
-
 }
